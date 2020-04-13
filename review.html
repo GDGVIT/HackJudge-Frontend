@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review</title>
+
+    <!-- LINKS -->
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="Public/review.css">
+    
+
+</head>
+<body>
+    <div class="header">
+        
+        <p><i class="fa fa-home"></i> Event Name</p>
+        <div class="search">
+            <input type="text" placeholder="Team Name">
+            <i class="fa fa-search"></i>
+            <button class="export">Export to xis</button>
+        </div>
+    </div>
+
+    <div class="reviews">
+        <div class="review-1">
+            <h1>Review 1</h1>
+            <div class="qualifying">  <p>No of <br> Qualifying Teams - </p> <span class="number">100</span>  </div>
+            <div class="evaluated">  <p>No of <br> Evaluated Teams - </p> <span class="number">89</span> </div>
+            <div class="evaluate-btn"><a href="#"><button>Evaluate  <i class="fa fa-angle-right"></i></button></a></div>
+            <div class="cross">&times;</div>
+        </div>
+
+        <div class="review-1 second">
+            <h1>Review 2</h1>
+            <div class="select-options">
+                <select name="options" id="dropdown">
+                    <option value="1">Qualifying Rank</option>
+                    <option value="2">Qualifying Score</option>
+                </select>
+            </div>
+            
+            <div class="score">
+                <input type="number" value="0">
+            </div>
+            
+            <div class="qualifying">  <p>No of <br> Qualifying Teams - </p> <span class="number">100</span>  </div>
+            <div class="evaluated">  <p>No of <br> Evaluated Teams - </p> <span class="number">89</span> </div>
+            <div class="evaluate-btn"><a href="#"><button>Evaluate  <i class="fa fa-angle-right"></i></button></a></div>
+            <div class="cross">&times;</div>
+        </div>
+
+
+        <div class="review-1 second">
+            <h1>Review 2</h1>
+            <div class="select-options">
+                <select name="options" id="dropdown">
+                    <option value="1">Qualifying Rank</option>
+                    <option value="2">Qualifying Score</option>
+                </select>
+            </div>
+            
+            <div class="score">
+                <input type="number" value="0">
+            </div>
+            
+            <div class="qualifying">  <p>No of <br> Qualifying Teams - </p> <span class="number">100</span>  </div>
+            <div class="evaluated">  <p>No of <br> Evaluated Teams - </p> <span class="number">89</span> </div>
+            <div class="evaluate-btn"><a href="#"><button>Evaluate  <i class="fa fa-angle-right"></i></button></a></div>
+            <div class="cross">&times;</div>
+        </div>
+    </div>
+
+    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="Public/jquery.nice-number.js"></script>
+    <script src="Public/review.js"></script>
+</body>
+</html>

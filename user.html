@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- LINKS -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="Public/user.css">
+
+    <title>User</title>
+</head>
+<body>
+    <div class="header"></div>
+    <section class="container">
+
+        <h2 id="register">Register</h2>
+
+        <div class="form">
+            
+            <form action="/">
+                <div class="formOptions">
+                    <label for="team">Team Name</label>
+                    <input type="text" name="text" id="team">
+                </div>
+                <div class="formOptions">
+                    <label for="problem">Problem Statement</label>
+                    <input type="text" name="problem" id="problem">
+                </div>
+                <div class="formOptions">
+                    <label for="participant-1">Participant 1</label>
+                    <input type="text" name="participant-1" id="participant-1">
+                    <!-- <button type="button" class="customBtn add">Add</button> -->
+                    <!-- <i class="fa fa-plus-circle add"></i> -->
+                </div>
+                <div class="formOptions">
+                    <label for="participant-2">Participant 2</label>
+                    <input type="text" name="participant-2" id="participant-2">
+                    <span class="add-participants">&plus;</span>
+                </div>
+                <div class="embed">
+
+                </div>
+                <div class="formOptions">
+                    <label for="file">Upload File</label>
+                    <input type="file" name="file" id="file" hidden="hidden">
+                    <span id="customTxt">Select File...</span>
+                    <button type="button" id="browseBtn">Browse</button>
+                </div>
+                <div class="formOptions">
+                    <label for="link">Repository Link</label>
+                    <input type="text" name="link" id="link">
+                </div>
+            </form>
+            <button type="submit" id="submitBtn">Submit</button>
+        </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="public/user.js"></script>
+</body>
+</html>
+

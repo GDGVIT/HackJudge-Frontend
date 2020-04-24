@@ -73,7 +73,7 @@ addMetrics.on('click', function(e){
     if(j<=max)
     {
         console.log(i);
-        wrapper2.append("<div class='new-metric'><label for='metric-"+j+"'>Metric "+j+"</label><input style='margin-left: 3px' type='text' id='metric-"+j+"'><label for='max-score-"+j+"' class='max' style='margin-right: 8px'>Max Score "+j+"</label><input type='number' value='0' id='max-score-'"+j+"><span class='remove-metrics'>-</span></div>")
+        wrapper2.append("<div class='metric-main'><label for='metric-"+j+"'>Metric "+j+"</label><input style='margin-left: 3px' type='text' id='metric-"+j+"'><label for='max-score-"+j+"' class='max' style='margin-right: 8px'>Max Score "+j+"</label><input type='number' value='0' id='max-score-'"+j+"><span class='remove-metrics'>-</span></div>")
         if(j <= max)
         {
             j++;
@@ -82,7 +82,7 @@ addMetrics.on('click', function(e){
         let removeMetrics = $('.remove-metrics');
         removeMetrics.on('click', function(e){
             e.preventDefault();
-            $(this).parents('.new-metric').remove();
+            $(this).parents('.metric-main').remove();
             if(j > min+1)
             {
                 j--;
@@ -104,4 +104,53 @@ $(function(){
 
     $('input[type="number"]').niceNumber();
   
+});
+
+createBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    let eventName = document.querySelector('#event-name');
+    let totalRounds = document.querySelector('#rounds');
+    let problemStatementOne = document.querySelector('#problem-1'); 
+    let problemStatementTwo = document.querySelector('#problem-2'); 
+    // let problemStatementThree = document.querySelector('#problem-3');
+    let maxScoreOne = document.querySelector('#max-score-1'); 
+    let maxScoreTwo = document.querySelector('#max-score-2');
+    let metricOne = document.querySelector('#metric-1');
+    let metricTwo = document.querySelector('#metric-2');
+    
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Authorization", "eyJhbGciOiJIUzI1NiJ9.c29tZXJhbmRvbXN0dWZmcGFydDdAc3R1ZmYuY29t.O0bdoKcsTwX7hmD8BM3VdfkjvG_SOd7c8Sy5SgtO0-0");
+
+    let data = {
+        name: eventName.value,
+        metric: [
+            {
+                metricName: metricOne.value,
+                maxScore: maxScoreOne.value
+            },
+            {
+                metricName: metricTwo.value,
+                maxScore: maxScoreTwo.value
+            }
+        ],
+        rounds: totalRounds.value,
+        problemStatements: [problemStatementOne.value, problemStatementTwo.value]
+    };
+
+    let raw = JSON.stringify(data);
+
+    var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow',
+        mode: 'cors'
+      };
+
+      fetch("https://hackjudge.herokuapp.com/events", requestOptions)
+      .then(response => response.text())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error));
+
 });

@@ -18,6 +18,8 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type=number] {
   -moz-appearance: textfield;
+  text-align: center;
+  padding: 0;
 }
 
 
@@ -148,7 +150,7 @@ input[type=number] {
     padding: 5px;
     box-sizing: border-box;
     margin-top: 15px;
-    margin-right: 15px;
+    margin-right: 5px;
 }
 
 .qualifying p, .evaluated p{
@@ -203,6 +205,7 @@ input[type=number] {
     align-items: center;
     z-index: -1;
     transition: right 150ms ease;
+
 }
 
 .review-1:hover .cross, .cross:hover{
@@ -218,9 +221,10 @@ input[type=number] {
     background-color: #8C61FF;
     border: none;
     color: #FFF;
-    padding: 20px 5px;
+    padding: 18px 5px;
     border-radius: 5px;
     outline: none;
+    transform: translateY(-2px);
 }
 
 #dropdown option{
@@ -250,15 +254,47 @@ input[type=number] {
     display: inline-block;
     border: 1px solid #8C61FF;
     border-radius: 5px;
-    padding: 6px 20px;
-    padding-bottom: 10px;
-    padding-right: 10px;
-    transform: translateX(-20%);
+    padding: 6px 10px;
+    /* padding-bottom: 10px; */
+    /* padding-right: 10px; */
+    transform: translateX(-15%);
 }
 
 .score input{
     border: none;
     color: #8C61FF;
-    padding: 5px;
+    /* padding: 5px; */
     font-size: 24px;
+}
+
+@media (max-width: 1000px)
+{
+    .qualifying, .evaluated{
+        font-size: 14px;
+        margin-left: 0;
+    }
+
+    .number{
+        font-size: 24px;
+    }
+
+    .evaluate-btn button{
+        padding: 4px 12px;
+        font-size: 16px;
+    }
+
+    .fa-angle-right{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 900px)
+{
+    .qualifying, .evaluated{
+        display: block;
+    }
+
+    .evaluate-btn button{
+        padding: 7px 15px;
+    }
 }

@@ -9,6 +9,39 @@ body{
     position: relative;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+  text-align: center;
+  padding: 0;
+}
+
+
+br{
+    display: block;
+    content: "";
+    margin: -20px;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #FFF;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #CECECE;
+}
+
 .header{
     height: 50px;
     width: 100vw;
@@ -55,7 +88,7 @@ body{
     padding-left: 10px;
 }
 .events > .event-1 > .teams{
-    height: 50px;
+    height: fit-content;
     border: 1px solid #8C61FF;
     border-radius: 5px;
     width: 250px;
@@ -70,7 +103,7 @@ body{
 }
 
 .events > .event-1 > .reviews{
-    height: 50px;
+    height: fit-content;
     border: 1px solid #8C61FF;
     border-radius: 5px;
     width: 150px;
@@ -235,6 +268,14 @@ form input:hover, form input:focus{
     cursor: pointer;
 }
 
+.nice-number input{
+    padding: 5px;
+}
+
+.nice-number{
+    display: inline-block;
+}
+
 .nice-number button:hover, .create:hover, .view a button:hover{
     background-color: rgb(116, 66, 252);
 }
@@ -348,6 +389,26 @@ form input:hover, form input:focus{
     cursor: pointer;
 }
 
+@media (max-width: 900px)
+{
+    .card{
+        height: fit-content;
+        width: fit-content;
+        margin-right: 10px;
+        /* margin-left: 10px; */
+    }
+}
+
+@media (max-width: 850px)
+{
+    form input{
+        width: 50%;
+    }
+
+    .judgement label{
+        width: 90px;
+    }
+}
 
 @media (max-width: 768px)
 {
@@ -374,6 +435,18 @@ form input:hover, form input:focus{
     }
 }
 
+@media (max-width: 700px)
+{
+    form input{
+        width: 40%;
+    }
+
+    .judgement input{
+        width: 20%;
+    }
+
+}
+
 @media (max-width: 650px)
 {
     .events > .event-1 > .teams, .events > .event-1 > .reviews
@@ -385,4 +458,22 @@ form input:hover, form input:focus{
         margin-top: 10px;
         margin-left: 30px;
     }
+
+    .nice-number button{
+        font-size: 20px;
+    }
+
+    label{
+        font-size: 12px;
+    }
+
+    form label{
+        width: 135px;
+    }
+
+    .judgement label{
+        width: 70px;
+    }
+
 }
+

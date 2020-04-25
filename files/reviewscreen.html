@@ -8,17 +8,36 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
-    <link rel="stylesheet" href="Public/teamreview.css">
+    <link rel="stylesheet" href="../Public/reviewscreen.css">
 
     <title>Document</title>
 </head>
 <body>
     <div class="header">
-        <p><i class="fa fa-home"></i> Event Name</p>
+        <p><i class="fa fa-home"></i> Review 1</p>
+        <div class="problem-statement">Problem Statement <i class="fa fa-angle-down"></i></div>
+        <div class="show">
+            <span>Show :</span>
+            <input type="radio" name="grp1" id="judged">
+            <label for="judged">Judged</label>
+            <input type="radio" name="grp1" id="not-judged">
+            <label for="not-judged">Not Judged</label>
+            <input type="radio" name="grp1" id="all" checked>
+            <label for="all">All</label>
+        </div>
         <button class="export">Export to xis</button>
     </div>
 
     <div class="content-container">
+        <div class="search">
+            <div class="input">
+                <input type="search" name="search-team" placeholder="Team Name"><i class="fa fa-search"></i></input>
+            </div>
+            <div class="remaining">
+                <p>10 of 100 Remaining</p>
+                <button class="submit">Submit <i class="fa fa-angle-right"></i></button>
+            </div>
+        </div>
 
         <div class="team-main">
             <div class="dropdown-trigger">
@@ -29,93 +48,11 @@
                 <strong>Abstract-</strong>
                 <br>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas commodi cupiditate repellendus ratione quod doloremque, facere porro optio illum. Laboriosam, quisquam sapiente maiores vitae, tempora velit iste ducimus aspernatur saepe dolore tenetur ratione quas facilis maxime voluptatum pariatur nobis asperiores perspiciatis magnam dolor similique itaque sed. Aliquid dolorum repellat itaque.</p>
-                <strong>Repo  -</strong><a href="#" class="repo">some link</a>
-                <p class="analysis"> <strong>Analysis  - </strong> Loremipsum </p>
+                <strong>Repo:</strong><a href="#" class="repo">some link</a>
+                <p class="analysis"> <strong>Analysis - </strong> Loremipsum </p>
                 <br>
-                <strong>Resource -</strong><a href="#" class="resource">some link</a>
+                <strong>Resource:</strong><a href="#" class="resource">some link</a>
 
-                <br>
-                <br>
-
-                <strong>Review 1</strong>
-                <div class="cards">
-                    <div class="small-card">
-                        <div class="text"><p>Technical Implementation</p></div>
-                        <div class="marks"><input type="number" id="tech-imp"></div>
-                    </div>
-                    <div class="small-card">
-                        <div class="text"><p>Design</p></div>
-                        <div class="marks"><input type="number" id="tech-imp"></div>
-                    </div>
-                    <div class="small-card">
-                        <div class="text"><p>Practical Implementation</p></div>
-                        <div class="marks"><input type="number" id="tech-imp"></div>
-                    </div>
-                    <div class="small-card">
-                        <div class="text"><p>Technical Implementation</p></div>
-                        <div class="marks"><input type="number" id="tech-imp"></div>
-                    </div>
-                    <div class="large-card">
-                        <p>Overall Statistics</p>
-                        <div class="total">
-                            <div class="over-rank">
-                                <h4>1 <sup>st</sup></h4>
-                                <p>Overall Rank</p>
-                            </div>
-                            <div class="problem-rank">
-                                <h4>1 <sup>st</sup></h4>
-                                <p>Problem Rank</p>
-                            </div>
-                            <div class="overall-score">
-                                <h4>36</h4>
-                                <p>Overall Score</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <br>
-
-                <strong>Review 2</strong>
-                <div class="cards">
-                    <div class="small-card">
-                        <div class="text"><p>Technical Implementation</p></div>
-                        <div class="marks"><input type="number" id="tech-imp"></div>
-                    </div>
-                    <div class="small-card">
-                        <div class="text"><p>Design</p></div>
-                        <div class="marks"><input type="number" id="tech-imp"></div>
-                    </div>
-                    <div class="small-card">
-                        <div class="text"><p>Practical Implementation</p></div>
-                        <div class="marks"><input type="number" id="tech-imp"></div>
-                    </div>
-                    <div class="small-card">
-                        <div class="text"><p>Technical Implementation</p></div>
-                        <div class="marks"><input type="number" id="tech-imp"></div>
-                    </div>
-                    <div class="large-card">
-                        <p>Overall Statistics</p>
-                        <div class="total">
-                            <div class="over-rank">
-                                <h4>1 <sup>st</sup></h4>
-                                <p>Overall Rank</p>
-                            </div>
-                            <div class="problem-rank">
-                                <h4>1 <sup>st</sup></h4>
-                                <p>Problem Rank</p>
-                            </div>
-                            <div class="overall-score">
-                                <h4>36</h4>
-                                <p>Overall Score</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <br>
-
-                <strong>Review 3</strong>
                 <div class="cards">
                     <div class="small-card">
                         <div class="text"><p>Technical Implementation</p></div>
@@ -155,12 +92,130 @@
                 <div class="comments">
                     <input type="text" placeholder="Additional Comments">
                 </div>
+
+            </div>
+        </div>
+
+        <div class="team-main">
+            <div class="dropdown-trigger">
+                <h1>Team Name</h1>
+                <p class="not-evaluated">Unevaluated  <i class="fa fa-angle-up hide"></i> <i class="fa fa-angle-down down-arrow"></i></p>
+            </div>
+            <div class="team-dropdown hide">
+                <strong>Abstract-</strong>
+                <br>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas commodi cupiditate repellendus ratione quod doloremque, facere porro optio illum. Laboriosam, quisquam sapiente maiores vitae, tempora velit iste ducimus aspernatur saepe dolore tenetur ratione quas facilis maxime voluptatum pariatur nobis asperiores perspiciatis magnam dolor similique itaque sed. Aliquid dolorum repellat itaque.</p>
+                <strong>Repo:</strong><a href="#" class="repo">some link</a>
+                <p class="analysis"> <strong>Analysis - </strong> Loremipsum </p>
+                <br>
+                <strong>Resource:</strong><a href="#" class="resource">some link</a>
+
+                <div class="cards">
+                    <div class="small-card">
+                        <div class="text"><p>Technical Implementation</p></div>
+                        <div class="marks"><input type="number" id="tech-imp"></div>
+                    </div>
+                    <div class="small-card">
+                        <div class="text"><p>Design</p></div>
+                        <div class="marks"><input type="number" id="tech-imp"></div>
+                    </div>
+                    <div class="small-card">
+                        <div class="text"><p>Practical Implementation</p></div>
+                        <div class="marks"><input type="number" id="tech-imp"></div>
+                    </div>
+                    <div class="small-card">
+                        <div class="text"><p>Technical Implementation</p></div>
+                        <div class="marks"><input type="number" id="tech-imp"></div>
+                    </div>
+                    <div class="large-card">
+                        <p>Overall Statistics</p>
+                        <div class="total">
+                            <div class="over-rank">
+                                <h4>Nil</h4>
+                                <p>Overall Rank</p>
+                            </div>
+                            <div class="problem-rank">
+                                <h4>Nil</h4>
+                                <p>Problem Rank</p>
+                            </div>
+                            <div class="overall-score">
+                                <h4>0</h4>
+                                <p>Overall Score</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comments">
+                    <input type="text" placeholder="Additional Comments">
+                </div>
+
+            </div>
+        </div>
+
+        <div class="team-main">
+            <div class="dropdown-trigger">
+                <h1>Team Name</h1>
+                <p class="not-evaluated">Unvaluated  <i class="fa fa-angle-up hide"></i> <i class="fa fa-angle-down down-arrow"></i></p>
+            </div>
+            <div class="team-dropdown hide">
+                <strong>Abstract-</strong>
+                <br>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas commodi cupiditate repellendus ratione quod doloremque, facere porro optio illum. Laboriosam, quisquam sapiente maiores vitae, tempora velit iste ducimus aspernatur saepe dolore tenetur ratione quas facilis maxime voluptatum pariatur nobis asperiores perspiciatis magnam dolor similique itaque sed. Aliquid dolorum repellat itaque.</p>
+                <strong>Repo:</strong><a href="#" class="repo">some link</a>
+                <p class="analysis"> <strong>Analysis - </strong> Loremipsum </p>
+                <br>
+                <strong>Resource:</strong><a href="#" class="resource">some link</a>
+
+                <div class="cards">
+                    <div class="small-card">
+                        <div class="text"><p>Technical Implementation</p></div>
+                        <div class="marks"><input type="number" id="tech-imp"></div>
+                    </div>
+                    <div class="small-card">
+                        <div class="text"><p>Design</p></div>
+                        <div class="marks"><input type="number" id="tech-imp"></div>
+                    </div>
+                    <div class="small-card">
+                        <div class="text"><p>Practical Implementation</p></div>
+                        <div class="marks"><input type="number" id="tech-imp"></div>
+                    </div>
+                    <div class="small-card">
+                        <div class="text"><p>Technical Implementation</p></div>
+                        <div class="marks"><input type="number" id="tech-imp"></div>
+                    </div>
+                    <div class="large-card">
+                        <p>Overall Statistics</p>
+                        <div class="total">
+                            <div class="over-rank">
+                                <h4>Nil</h4>
+                                <p>Overall Rank</p>
+                            </div>
+                            <div class="problem-rank">
+                                <h4>Nil</h4>
+                                <p>Problem Rank</p>
+                            </div>
+                            <div class="overall-score">
+                                <h4>0</h4>
+                                <p>Overall Score</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comments">
+                    <input type="text" placeholder="Additional Comments">
+                </div>
+
             </div>
         </div>
     </div>
 
+    
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="Public/jquery.nice-number.js"></script>
-    <script src="Public/teamreview.js"></script>
+    <script src="../Public/reviewscreen.js"></script>
 </body>
 </html>

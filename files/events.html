@@ -8,8 +8,8 @@
     <!-- LINKS -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="Public/events.css">
-    <link rel="stylesheet" href="Public/jquery.nice-number.css">
+    <link rel="stylesheet" href="../Public/events.css">
+    <link rel="stylesheet" href="../Public/jquery.nice-number.css">
 
 </head>
 <body>
@@ -20,14 +20,17 @@
             <h1>Event 1 <span class="date">Date</span></h1>
 
             <div class="teams">
-                <p>No. of Enrolled Teams - <span class="number">100</span></p>
+                <p>No. of <br> Enrolled Teams - <span class="number">100</span></p>
             </div>
-            <div class="reviews">
-                <p>No. of Reviews - <span class="number">3</span></p>
-            </div>
+
             <div class="view">
                 <a href="review.html"><button>View <i class="fa fa-angle-right"></i></button></a>
             </div>
+
+            <div class="reviews">
+                <p>No. of <br> Reviews - <span class="number">3</span></p>
+            </div>
+
         </div>
 
         <div class="add"><i class="fa fa-plus"></i></div>
@@ -58,15 +61,19 @@
             <div class="judgement">
                 <h4>Judgement Metrics</h4>
                 <div class="metric">
-                    <label for="metric-1">Metric 1</label>
-                    <input type="text" id="metric-1">
-                    <label for="max-score-1" class="max">Max Score</label>
-                    <input type="number" value="0" id="max-score-1">
-                    <span class="add-metrics">&plus;</span>
-                    <label for="metric-2">Metric 2</label>
-                    <input type="text" id="metric-2">
-                    <label for="max-score-2" class="max">Max Score</label>
-                    <input type="number" value="0" id="max-score-2">                    
+                    <div class="metric-main">
+                        <label for="metric-1">Metric 1</label>
+                        <input type="text" id="metric-1">
+                        <label for="max-score-1" class="max">Max Score</label>
+                        <input type="number" value="0" id="max-score-1">
+                        <span class="add-metrics">&plus;</span>
+                    </div>
+                    <div class="metric-main">
+                        <label for="metric-2">Metric 2</label>
+                        <input type="text" id="metric-2">
+                        <label for="max-score-2" class="max">Max Score</label>
+                        <input type="number" value="0" id="max-score-2">  
+                    </div>
                 </div>
 
                 <!-- <div class="metric"> -->
@@ -83,7 +90,7 @@
     
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="Public/jquery.nice-number.js"></script>
-    <script src="Public/events.js"></script>
+    <script src="../Public/jquery.nice-number.js"></script>
+    <script src="../Public/events.js"></script>
 </body>
 </html>

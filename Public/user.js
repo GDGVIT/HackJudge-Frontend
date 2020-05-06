@@ -68,7 +68,7 @@ submitBtn.addEventListener('click', function(e){
     e.preventDefault();
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    // myHeaders.append("Authorization", sessionStorage.getItem('token'));
+    myHeaders.append("Authorization", sessionStorage.getItem('token'));
 
     let data = {
         email: '',
@@ -84,7 +84,7 @@ submitBtn.addEventListener('click', function(e){
         headers: myHeaders,
         body: raw,
         redirect: 'follow',
-        mode: 'no-cors'
+        // mode: 'no-cors'
     };
 
     fetch("https://hackjudge.herokuapp.com/details", requestOptions)

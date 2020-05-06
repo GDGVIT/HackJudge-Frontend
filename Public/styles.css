@@ -67,19 +67,19 @@ body{
     width: 100%;
 }
 
-.signUp p{
+.signUp p, .login-page p{
     margin: auto;
     width: 80%;
     text-align: left;
     color: red;
 }
 
-#admin-signup{
+#admin-signup, #admin-login{
     cursor: pointer;
     text-decoration: underline;
 }
 
-#admin-signup:hover{
+#admin-signup:hover, #admin-login:hover{
     color: rgb(116, 67, 250);
 }
 
@@ -110,7 +110,7 @@ input::placeholder{
     font-size: 18px;
 }
 
-.login-btn, .signup-btn, .okay, .admin-signup-btn{
+.login-btn, .signup-btn, .okay, .admin-signup-btn, .admin-login-btn{
     padding: 5px 15px;
     background-color: #8C61FF;
     color: #FFF;
@@ -125,7 +125,7 @@ input::placeholder{
     margin-bottom: 10px;
 }
 
-.login-btn:hover, .signup-btn:hover, .okay:hover, .admin-signup-btn:hover{
+.login-btn:hover, .signup-btn:hover, .okay:hover, .admin-signup-btn:hover, .admin-login-btn:hover{
     background-color: rgb(116, 67, 250);
 }
 
@@ -173,7 +173,11 @@ img{
     transition: all 150ms linear;
 }
 
-.admin-section.active, .admin-form.active{
+.admin-login{
+    transition: all 150ms linear;
+}
+
+.admin-section.active, .admin-form.active, .admin-login.active{
     transform: scale(1);
     z-index: 100;
 }
@@ -195,13 +199,14 @@ img{
     position: relative;
 }
 
-.passcode i{
+.passcode i, .admin-login i{
     position: absolute;
     font-size: 30px;
     font-weight: 900;
     color: rgba(0, 0, 0, 0.4);
     top: 50px;
     right: 50px;
+    cursor: pointer;
 }
 
 #passcode{
@@ -216,7 +221,7 @@ label[for=passcode]{
     margin-bottom: 10px;
 }
 
-.admin-form{
+.admin-form, .admin-login{
     position: absolute;
     background-color: #FFF;
     top: 0;
@@ -231,7 +236,7 @@ label[for=passcode]{
     /* flex-direction: column; */
 }
 
-.admin-signup-form{
+.admin-signup-form, .admin-login-form{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -239,7 +244,7 @@ label[for=passcode]{
     color: #8C61FF;
 }
 
-.admin-signup-form input, .admin-signup-form button{
+.admin-signup-form input, .admin-signup-form button, .admin-login-form input, .admin-login-form button{
     width: 400px;
 }
 
@@ -282,7 +287,7 @@ label[for=passcode]{
 @media (max-width: 767px)
 {
     .form{
-        height: 65vh;
+        height: 80vh;
         justify-content: flex-end;
     }
 
@@ -325,6 +330,7 @@ label[for=passcode]{
     img{
         height: auto;
         width: 300px;
+        margin-top: 30px;
     }
 
     .carousel-caption h3{

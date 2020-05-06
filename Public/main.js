@@ -11,6 +11,9 @@ let adminSignup = $('#admin-signup');
 let okay = $('.okay');
 let adminSignupBtn = $('.admin-signup-btn');
 let adminSignUpForm = $('.admin-form');
+let adminLoginForm = $('.admin-login');
+let adminLoginBtn = $('.admin-login-btn');
+let adminLogin = $('#admin-login');
 
 // FRONTEND SECTION JS ###########################  
 // FRONTEND SECTION JS ###########################  
@@ -37,7 +40,7 @@ adminSignup.on('click', function(){
     adminSection.addClass('active')
 });
 
-let close = $('.fa-times');
+let close = $('.close-signup');
 close.on('click', function(){
     adminSection.removeClass('active');
 });
@@ -59,6 +62,14 @@ okay.on('click', function(){
     }
 });
 
+adminLogin.on('click', function(){
+    adminLoginForm.addClass('active');
+});
+
+let closeAdmin = $('.close-admin');
+closeAdmin.on('click', function(){
+    adminLoginForm.removeClass('active');
+});
 
 
 // FETCH REQUESTS START HERE ################################################################################
@@ -80,10 +91,16 @@ $(document).ready(function(){
         IsEmail(check);
     })
 
+    $("#admin-login-mail").keyup(function () {
+        var check = $("#admin-login-mail").val();
+        IsEmail(check);
+    })
+
     $('#username').keyup(function(){
         var check = $("#username").val();
         IsEmail(check);
     })
+    
     var isemail = false;
 
     function IsEmail(email) {
@@ -93,9 +110,11 @@ $(document).ready(function(){
             $("#mail").css("border", "2px solid red");
             $("#username").css("border", "2px solid red");
             $("#admin-mail").css("border", "2px solid red");
+            $("#admin-login-mail").css("border", "2px solid red");
             $(signUpBtn).css("background-color", "grey");
             $(loginBtn).css("background-color", "grey");
             $(adminSignupBtn).css("background-color", "grey");
+            adminLoginBtn.css("background-color", "grey");
             // $(adminSignupBtn).css("cursor", "not-allowed");
             // $(loginBtn).css("cursor", "not-allowed");
             // $(signUpBtn).css("cursor", "not-allowed");
@@ -105,9 +124,11 @@ $(document).ready(function(){
             $("#mail").css("border", "2px solid green");
             $("#username").css("border", "2px solid green");
             $("#admin-mail").css("border", "2px solid green");
+            $("#admin-login-mail").css("border", "2px solid green");
             $(signUpBtn).css("background-color", "#8C61FF");
             $(loginBtn).css("background-color", "#8C61FF");
             $(adminSignupBtn).css("background-color", "#8C61FF");
+            $(adminLoginBtn).css("background-color", "#8C61FF");
         }
     }
 
@@ -172,10 +193,19 @@ $(document).ready(function(){
                 console.log(result)
                 sessionStorage.setItem("token", result["token"]);
                 form.trigger("reset");
-                swal("Success", "You're all set!", "success");
-                setTimeout(function(){
-                    location.href = "./files/user.html"
-                }, 2500)
+                if(result["message"] ==="Auth failed")
+                {
+                    message.text("Incorrect Email or Password");
+                    message.css('color', 'red');
+                    message.css('margin-bottom', '10px');
+                }
+                else{
+                    message.text('');
+                    swal("Success", "You're all set!", "success");
+                    setTimeout(function(){
+                        location.href = "./files/user.html"
+                    }, 2500)
+                }
             })
             .catch(error => {
                 console.log('error', error)
@@ -276,6 +306,54 @@ $(document).ready(function(){
             message.text("Passswords Don't Match");
             message.css('color', 'red');
             message.css('margin-bottom', '10px');
+        }
+    });
+
+    adminLoginBtn.on('click', function(e){
+        e.preventDefault();
+        let mail = $('#admin-login-mail');
+        let password = $('#admin-login-password');
+        let form = $('.admin-login-form');
+        let messageBox = $('.admin-message');
+        
+        if (isemail)
+        {
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({email:mail.val() , password:password.val()});
+
+            var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+            };
+
+            fetch("https://hackjudge.herokuapp.com/admin/login/", requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                console.log(result)
+                sessionStorage.setItem("admin-token", result["token"]);
+                form.trigger("reset");
+                if(result["message"]==="Auth failed")
+                {
+                    messageBox.text("Incorrect email or Password");
+                    messageBox.css('color', 'red');
+                    messageBox.css('margin-bottom', '10px');
+                }
+                else{
+                    messageBox.text('');
+                    swal("Success", "You're all set!", "success");
+                    setTimeout(function(){
+                        location.href = "./files/events.html"
+                    }, 2500);
+                }
+            })
+            .catch(error => {
+                console.log('error', error)
+                swal("Aww snap!", "some error occurred!", "error");
+        });
         }
     });
 });

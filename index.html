@@ -30,9 +30,12 @@
                   <form class="login-form">
                     <input type="email" name="username" id="username" placeholder="Email" autocomplete="off">
                     <input type="password" name="password" id="password" placeholder="Password" autocomplete="off">
-                    <div class="message"></div>
                     <button class="login-btn">Login</button>
+                    <div class="message"></div>
                   </form>
+
+                  <p>Admin?</p>
+                  <p id="admin-login">Click here</p>
                 </div>
     
                 <div class="signUp">
@@ -41,8 +44,8 @@
                       <input type="text" name="new-username" id="new-username" placeholder="Username" autocomplete="off">
                       <input type="password" id="new-password" placeholder="Password" autocomplete="off">
                       <input type="password" id="confirm-password" placeholder="Confirm Password" autocomplete="off">
-                      <div class="message"></div>
                       <button class="signup-btn">Sign Up</button>
+                      <div class="message"></div>
                     </form>
 
                     <p>Admin?</p>
@@ -93,7 +96,7 @@
 
     <div class="admin-section">
       <div class="passcode">
-        <i class="fa fa-times"></i>
+        <i class="fa fa-times close-signup"></i>
         <label for="passcode">Enter Password</label>
         <input type="text" name="passcode" id="passcode">
         <button class="okay">Enter</button>
@@ -107,9 +110,22 @@
         <input type="text"  id="admin-username" placeholder="Username" autocomplete="off">
         <input type="password" id="admin-password" placeholder="Password" autocomplete="off">
         <input type="password" id="confirm-admin-password" placeholder="Confirm Password" autocomplete="off">
-        <div class="admin-message"></div>
         <button class="admin-signup-btn">Sign Up</button>
+        <div class="admin-message"></div>
       </form>
+    </div>
+    <div class="admin-login">
+      <form class="admin-login-form">
+        <h4>Admin Login</h4>
+        <input type="email" id="admin-login-mail" placeholder="Email" autocomplete="off">
+        <!-- <input type="text"  id="admin-username" placeholder="Username" autocomplete="off"> -->
+        <input type="password" id="admin-login-password" placeholder="Password" autocomplete="off">
+        <!-- <input type="password" id="confirm-admin-password" placeholder="Confirm Password" autocomplete="off"> -->
+        <button class="admin-login-btn">Login</button>
+        <div class="admin-message"></div>
+      </form>
+
+      <i class="fa fa-times close-admin"></i>
     </div>
 
     <script

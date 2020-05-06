@@ -108,34 +108,34 @@ $(function(){
 
 createBtn.addEventListener('click', function(e){
     e.preventDefault();
-    let eventName = document.querySelector('#event-name');
-    let totalRounds = document.querySelector('#rounds');
-    let problemStatementOne = document.querySelector('#problem-1'); 
-    let problemStatementTwo = document.querySelector('#problem-2'); 
+    let eventName = $('#event-name');
+    let totalRounds = $('#rounds');
+    let problemStatementOne = $('#problem-1'); 
+    let problemStatementTwo = $('#problem-2'); 
     // let problemStatementThree = document.querySelector('#problem-3');
-    let maxScoreOne = document.querySelector('#max-score-1'); 
-    let maxScoreTwo = document.querySelector('#max-score-2');
-    let metricOne = document.querySelector('#metric-1');
-    let metricTwo = document.querySelector('#metric-2');
+    let maxScoreOne = $('#max-score-1'); 
+    let maxScoreTwo = $('#max-score-2');
+    let metricOne = $('#metric-1');
+    let metricTwo = $('#metric-2');
     
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Authorization", "eyJhbGciOiJIUzI1NiJ9.c29tZXJhbmRvbXN0dWZmcGFydDdAc3R1ZmYuY29t.O0bdoKcsTwX7hmD8BM3VdfkjvG_SOd7c8Sy5SgtO0-0");
+    myHeaders.append("Authorization", sessionStorage.getItem("admin-token"));
 
     let data = {
         name: eventName.value,
         metric: [
             {
-                metricName: metricOne.value,
-                maxScore: maxScoreOne.value
+                metricName: metricOne.val(),
+                maxScore: maxScoreOne.val()
             },
             {
-                metricName: metricTwo.value,
-                maxScore: maxScoreTwo.value
+                metricName: metricTwo.val(),
+                maxScore: maxScoreTwo.val()
             }
         ],
-        rounds: totalRounds.value,
-        problemStatements: [problemStatementOne.value, problemStatementTwo.value]
+        rounds: totalRounds.val(),
+        problemStatements: [problemStatementOne.val(), problemStatementTwo.val()]
     };
 
     let raw = JSON.stringify(data);
@@ -145,7 +145,7 @@ createBtn.addEventListener('click', function(e){
         headers: myHeaders,
         body: raw,
         redirect: 'follow',
-        mode: 'cors'
+        mode: 'no-cors'
       };
 
       fetch("https://hackjudge.herokuapp.com/events", requestOptions)
